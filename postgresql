@@ -1,0 +1,54 @@
+CREATE TABLE Articles (
+    id INT,
+    magazines_id INT,
+    article_type_id INT,
+    author_id INT
+);
+INSERT INTO Articles (id, magazines_id, article_type_id, author_id)
+VALUES (1, 1, 2, 3),
+       (2, 3, 3, 2),
+       (3, 2, 2, 4),
+       (4, 1, 1, 1);
+
+
+
+CREATE TABLE magazines (
+    id INT PRIMARY KEY,
+    name VARCHAR (20)
+);
+INSERT INTO magazines (id, name)
+VALUES (1, 'it herald'),
+       (2, 'IT STORIES'),
+       (3, 'IT with kids');
+
+
+
+CREATE TABLE article_types (
+    id INT PRIMARY KEY,
+    type VARCHAR (20)
+);
+INSERT INTO article_types (id, type)
+VALUES (1, 'news'),
+       (2, 'tech'),
+       (3, 'entertainment');
+
+
+CREATE TABLE author (
+    id INT,
+    type VARCHAR (20)
+);
+INSERT INTO author (id, author)
+VALUES (1, 'Chappie'),
+       (2, 'Wall-e'),
+       (3, 'ATOM')
+       (4, 'T1000');
+
+/home/db_admin/author.txt
+
+
+
+CREATE TABLE author (
+    id INT PRIMARY KEY,
+    type VARCHAR (20)
+);
+COPY author FROM '/home/db_admin/author.txt';
