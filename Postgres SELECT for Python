@@ -1,0 +1,5 @@
+SELECT a.id, b.name, c.type, d.author
+FROM articles as a
+JOIN magazines as b ON b.id = a.magazines_id
+JOIN article_types as c ON c.id = a.article_type_id
+JOIN author as d ON d.id = a.author_id;
